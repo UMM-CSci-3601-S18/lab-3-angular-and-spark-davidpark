@@ -81,9 +81,21 @@ You should create a `TESTCOVERAGE.md` document where you outline:
 1. :question: Notice anything new in our ``.gitignore``? There are actually
 multiple ``.gitignore`` files in this project. Where are they?
 Why might we have more than one, and how do they interact?
+
+One in client, one in server, and other one is whole lab three folder. Make server ignore something but not in client and vice versa.
+gitignore in lab3 apply both server and client.
+
 1. :question: Note also that there are now multiple ``build.gradle`` files
 as well! Why is this?
+
+we can run test on either server or client and both.
+
 1. :question: How does the navbar work in this project? Is our SparkJava server
 the only thing doing routing?
+
+sidenav and buttons. SparkJava server and typescript doing routing.
+
 1. :question: What does the `user-list.service.ts` do? Why is it not just done in
 the `user-list.component.ts`?
+
+we want service and components separate. we can use service on a part of project without using component since component implements service.
