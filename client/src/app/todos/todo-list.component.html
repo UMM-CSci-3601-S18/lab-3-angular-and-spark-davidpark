@@ -11,25 +11,25 @@
         <mat-divider></mat-divider>
         <mat-card-content>
           <mat-form-field>
-            <input matInput id="todoName" #input placeholder="Filter by name" (input)="todoName = $event.target.value">
+            <input matInput id="todoOwner" #input placeholder="Filter by owner" (input)="todoOwner = $event.target.value">
           </mat-form-field>
           <mat-form-field>
-            <input matInput id="todoAge" #input type="number" placeholder="Filter by age"
-                   (input)="todoAge = $event.target.value">
+            <input matInput id="todoStatus" #input type="status" placeholder="Filter by status"
+                   (input)="todoStatus = $event.target.value">
           </mat-form-field>
           <!--<mat-form-field>-->
           <!--<input matInput id="todoCompany" #input type="text" placeholder="Search for company" (input)="contentChange($event.target.value)">-->
           <!--</mat-form-field>-->
 
           <mat-accordion *ngIf="todos; else todosError">
-            <mat-expansion-panel #elem [id]="todo.email" *ngFor="let todo of this.filterTodos(todoName, todoAge)">
+            <mat-expansion-panel #elem [id]="todo.category" *ngFor="let todo of this.filterTodos(todoOwner, todoStatus)">
               <mat-expansion-panel-header>
 
-                <mat-panel-title matTooltip="email: {{todo.email}}">{{todo.name}}</mat-panel-title>
+                <mat-panel-title matTooltip="category: {{todo.category}}">{{todo.owner}}</mat-panel-title>
 
               </mat-expansion-panel-header>
-              <mat-panel-description>Works for {{todo.company}}</mat-panel-description>
-              <mat-panel-description>Age: {{todo.age}} years old</mat-panel-description>
+              <mat-panel-description>Has ID {{todo._id}}</mat-panel-description>
+              <mat-panel-description>Status: {{todo.status}} is the status</mat-panel-description>
 
             </mat-expansion-panel>
           </mat-accordion>
