@@ -29,16 +29,16 @@ export class TodoListComponent implements OnInit {
 
   }
 
-  public filterTodos(searchName: string, searchAge: number): Todo[] {
+  public filterTodos(searchOwner: string, searchAge: number): Todo[] {
 
     this.filteredTodos = this.todos;
 
-    // Filter by name
-    if (searchName != null) {
-      searchName = searchName.toLocaleLowerCase();
+    // Filter by owner
+    if (searchOwner != null) {
+      searchOwner = searchOwner.toLocaleLowerCase();
 
       this.filteredTodos = this.filteredTodos.filter(todo => {
-        return !searchName || todo.name.toLowerCase().indexOf(searchName) !== -1;
+        return !searchOwner || todo.owner.toLowerCase().indexOf(searchOwner) !== -1;
       });
     }
 
