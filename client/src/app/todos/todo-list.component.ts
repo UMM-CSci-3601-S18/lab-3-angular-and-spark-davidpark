@@ -58,7 +58,7 @@ export class TodoListComponent implements OnInit {
     todos.subscribe(
       returnedTodos => {
         this.todos = returnedTodos;
-        //this.filterTodos(this.todoOwner, this.todoAge);
+        this.filterTodos(this.todoOwner);
       },
       err => {
         console.log(err);
