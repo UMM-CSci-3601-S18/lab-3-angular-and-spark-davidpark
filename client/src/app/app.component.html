@@ -8,8 +8,9 @@
       <a mat-list-item [routerLink]="['/users']" (click)="layout.close()" routerLinkActive="nav-active">
         <mat-icon>account_box</mat-icon>
         Users</a>
-      <!--This is the route for todos and should be uncommented when used-->
-      <!--<a mat-list-item [routerLink]="['/todos']" (click)="layout.close()" routerLinkActive="nav-active"><mat-icon>account_box</mat-icon>Todos(Disabled)</a>-->
+      <a mat-list-item [routerLink]="['/todos']" (click)="layout.close()" routerLinkActive="nav-active">
+        <mat-icon>account_box</mat-icon>
+        Todos</a>
     </mat-nav-list>
   </td-navigation-drawer>
   <td-layout-nav toolbarTitle="Menu" navigationRoute="/">
