@@ -60,6 +60,7 @@ describe('Todo component', () => {
     expect(todoComponent.todo).toBeDefined();
     expect(todoComponent.todo._id).toBe('58895985a22c04e761776d54');
     expect(todoComponent.todo.owner).toBe('Blanche');
+    expect(todoComponent.todo.body).toBe('In sunt ex non tempor cillum commodo amet incididunt anim qui commodo quis. Cillum non labore ex sint esse.');
 
   });
 

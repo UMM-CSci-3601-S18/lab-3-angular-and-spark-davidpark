@@ -17,6 +17,7 @@ export class TodoListComponent implements OnInit {
 
   public todoID: string;
   public todoOwner: string;
+  public todoBody: string;
 
   // Inject the TodoListService into this component.
   // That's what happens in the following constructor.
@@ -28,7 +29,7 @@ export class TodoListComponent implements OnInit {
 
   }
 
-  public filterTodos(searchID: string, searchOwner: string): Todo[] {
+  public filterTodos(searchID: string, searchOwner: string, searchBody: string): Todo[] {
 
     this.filteredTodos = this.todos;
 
@@ -40,13 +41,22 @@ export class TodoListComponent implements OnInit {
         return !searchID || todo._id.toLowerCase().indexOf(searchID) !== -1;
       });
     }
-    
+
     // Filter by name
     if (searchOwner != null) {
       searchOwner = searchOwner.toLocaleLowerCase();
 
       this.filteredTodos = this.filteredTodos.filter(todo => {
         return !searchOwner || todo.owner.toLowerCase().indexOf(searchOwner) !== -1;
+      });
+    }
+
+    // Filter by body
+    if (searchBody != null) {
+      searchBody = searchBody.toLocaleLowerCase();
+
+      this.filteredTodos = this.filteredTodos.filter(todo => {
+        return !searchBody || todo.body.toLowerCase().indexOf(searchBody) !== -1;
       });
     }
 
@@ -68,7 +78,7 @@ export class TodoListComponent implements OnInit {
     todos.subscribe(
       returnedTodos => {
         this.todos = returnedTodos;
-        this.filterTodos(this.todoID, this.todoOwner);
+        this.filterTodos(this.todoID, this.todoOwner, this.todoBody);
       },
       err => {
         console.log(err);
