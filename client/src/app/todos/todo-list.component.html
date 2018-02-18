@@ -14,7 +14,11 @@
 
         <mat-accordion *ngIf="todos; else todosError">
           <mat-expansion-panel #elem [id]="todo.owner" *ngFor="let todo of this.filterTodos(todoOwner)">
+            <mat-expansion-panel-header>
 
+              <mat-panel-title matTooltip="owner: {{todo.owner}}">{{todo.owner}}</mat-panel-title>
+
+            </mat-expansion-panel-header>
             <mat-panel-description>{{todo.owner}} is the owner of this todo.</mat-panel-description>
 
           </mat-expansion-panel>
