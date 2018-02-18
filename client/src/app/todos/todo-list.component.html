@@ -17,13 +17,17 @@
           <input matInput id="todoBody" #input placeholder="Filter by body" (input)="todoBody = $event.target.value">
         </mat-form-field>
 
+        <mat-form-field>
+          <input matInput id="todoCategory" #input placeholder="Filter by category" (input)="todoCategory = $event.target.value">
+        </mat-form-field>
+
         <!--<mat-form-field>-->
         <!--<input matInput id="todoCompany" #input type="text" placeholder="Search for company" (input)="contentChange($event.target.value)">-->
         <!--</mat-form-field>-->
 
         <mat-accordion *ngIf="todos; else todosError">
 
-          <mat-expansion-panel #elem [id]="todo._id" *ngFor="let todo of this.filterTodos(todoID, todoOwner, todoBody)">
+          <mat-expansion-panel #elem [id]="todo._id" *ngFor="let todo of this.filterTodos(todoID, todoOwner, todoBody, todoCategory)">
 
             <mat-expansion-panel-header>
 
@@ -34,7 +38,7 @@
             <mat-panel-description>{{todo._id}} is the ID of this todo.</mat-panel-description>
             <mat-panel-description>{{todo.owner}} is the owner of this todo.</mat-panel-description>
             <mat-panel-description>{{todo.body}} is the body of this todo.</mat-panel-description>
-
+            <mat-panel-description>{{todo.category}} is the category of this todo.</mat-panel-description>
 
           </mat-expansion-panel>
         </mat-accordion>
