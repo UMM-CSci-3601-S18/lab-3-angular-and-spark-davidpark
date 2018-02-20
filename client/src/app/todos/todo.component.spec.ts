@@ -62,7 +62,7 @@ describe('Todo component', () => {
     expect(todoComponent.todo.owner).toBe('Blanche');
     expect(todoComponent.todo.body).toBe('In sunt ex non tempor cillum commodo amet incididunt anim qui commodo quis. Cillum non labore ex sint esse.');
     expect(todoComponent.todo.category).toBe('software design');
-
+    expect(todoComponent.todo.status).toBe(false);
   });
 
   it('returns undefined for Santa', () => {
